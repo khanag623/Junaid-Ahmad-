@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mushtaq Mayo Milk Shop | مشتاق میو ملک شاپ</title>
+  <meta name="description" content="Mushtaq Mayo Milk Shop - 100% Pure Dairy, Fresh Bakery & Clean Filtered Water Supply. خالص دودھ دہی، تازہ بیکری اور صاف فلٹر پانی کی سپلائی" />
+
+  <!-- Google Fonts: Plus Jakarta Sans (English), Noto Nastaliq Urdu & Noto Sans Arabic (Urdu) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-cream: #fbf9f3;
+      --bg-white: #ffffff;
+      --bg-soft-green: #eaf7ee;
+      --bg-soft-blue: #e8f4fc;
+      --bg-soft-amber: #fef6e6;
+
+      --green-primary: #1b7a43;
+      --green-dark: #135a31;
+      --green-accent: #25d366;
+      --blue-primary: #0b6fa4;
+      --blue-soft: #38a3d1;
+      --amber-accent: #c97a16;
+
+      --text-dark: #18261e;
+      --text-muted: #52635a;
+      --border-light: #e2e8e0;
+
+      --shadow-sm: 0 2px 10px rgba(24, 38, 30, 0.05);
+      --shadow-md: 0 8px 26px rgba(24, 38, 30, 0.08);
+      --shadow-lg: 0 14px 34px rgba(27, 122, 67, 0.14);
+
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-pill: 999px;
+
+      --font-en: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-ur: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', serif;
+      --font-ur-ui: 'Noto Sans Arabic', 'Noto Nastaliq Urdu', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-en);
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 84px;
+    }
+
+    /* Strictly preserve LTR for phone numbers even in RTL/Urdu mode */
+    .ltr-num {
+      direction: ltr;
+      unicode-bidi: isolate;
+      display: inline-block;
+      font-family: var(--font-en);
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    /* Bilingual Text Utilities */
+    .ur {
+      font-family: var(--font-ur);
+      line-height: 2.05;
+      font-weight: 600;
+      direction: rtl;
+    }
+
+    .ur-ui {
+      font-family: var(--font-ur-ui);
+      line-height: 1.7;
+      font-weight: 600;
+      direction: rtl;
+    }
+
+    .en {
+      font-family: var(--font-en);
+      direction: ltr;
+    }
+
+    .bilingual-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    html[dir="rtl"] .bilingual-stack {
+      flex-direction: column-reverse;
+    }
+
+    html[dir="rtl"] .bilingual-stack .ur {
+      font-size: 1.12em;
+    }
+
+    html[dir="rtl"] .bilingual-stack .en {
+      font-size: 0.92em;
+      color: var(--text-muted);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    /* Top Sticky Navigation Bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 0;
+      flex-wrap: wrap;
+    }
+
+    .brand-mini {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-dark);
+    }
+
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--bg-soft-green), var(--bg-soft-blue));
+      border: 1px solid #cce7d5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .brand-mini-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+    }
+
+    .brand-mini-text .en {
+      font-weight: 800;
+      font-size: 0.98rem;
+      color: var(--green-dark);
+    }
+
+    .brand-mini-text .ur-ui {
+      font-size: 0.9rem;
+      color: var(--blue-primary);
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .lang-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      border: 1.5px solid var(--green-primary);
+      background: var(--bg-white);
+      color: var(--green-dark);
+      font-family: var(--font-en);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-toggle-btn:hover {
+      background: var(--bg-soft-green);
+      transform: translateY(-1px);
+    }
+
+    .lang-toggle-btn .ur-ui {
+      font-size: 0.95rem;
+    }
+
+    .btn-wa-sm {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: var(--radius-pill);
+      background: var(--green-primary);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.88rem;
+      box-shadow: 0 4px 12px rgba(27, 122, 67, 0.22);
+      transition: all 0.2s ease;
+    }
+
+    .btn-wa-sm:hover {
+      background: var(--green-dark);
+      transform: translateY(-1px);
+    }
+
+    /* Hero / Header Banner */
+    .hero {
+      background:
+        radial-gradient(circle at top right, rgba(56, 163, 209, 0.14), transparent 45%),
+        radial-gradient(circle at bottom left, rgba(27, 122, 67, 0.12), transparent 50%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg-cream) 100%);
+      padding: 38px 0 32px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .hero-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-pill-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .trust-pill.dairy {
+      background: var(--bg-soft-green);
+      color: var(--green-dark);
+    }
+
+    .trust-pill.bakery {
+      background: var(--bg-soft-amber);
+      color: #8f5306;
+    }
+
+    .trust-pill.water {
+      background: var(--bg-soft-blue);
+      color: var(--blue-primary);
+    }
+
+    .hero-title {
+      margin-bottom: 14px;
+    }
+
+    .hero-title .en {
+      font-size: clamp(1.75rem, 4vw, 2.7rem);
+      font-weight: 800;
+      color: var(--green-dark);
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+
+    .hero-title .ur {
+      font-size: clamp(1.65rem, 3.8vw, 2.45rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.95;
+    }
+
+    .hero-tagline {
+      max-width: 780px;
+      margin: 0 auto 24px;
+      color: var(--text-muted);
+    }
+
+    .hero-tagline .en {
+      font-size: clamp(0.98rem, 2.2vw, 1.15rem);
+      font-weight: 600;
+      color: var(--blue-primary);
+    }
+
+    .hero-tagline .ur {
+      font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+      color: var(--text-dark);
+    }
+
+    .hero-cta-group {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .btn-primary-wa {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #1b7a43, #179b52);
+      color: #fff;
+      text-decoration: none;
+      padding: 13px 26px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.22s ease;
+    }
+
+    .btn-primary-wa:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(27, 122, 67, 0.24);
+    }
+
+    .btn-secondary-call {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--bg-soft-blue);
+      color: var(--blue-primary);
+      border: 1.5px solid #bfe2f5;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      font-size: 0.98rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary-call:hover {
+      background: #d7eefc;
+      transform: translateY(-1px);
+    }
+
+    /* Quick Category Anchor Nav */
+    .quick-nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding-top: 16px;
+      border-top: 1px dashed var(--border-light);
+    }
+
+    .quick-nav a {
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: var(--radius-pill);
+      background: var(--bg-cream);
+      border: 1px solid var(--border-light);
+      color: var(--text-dark);
+      font-size: 0.88rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .quick-nav a:hover {
+      background: var(--bg-soft-green);
+      border-color: var(--green-primary);
+      color: var(--green-dark);
+    }
+
+    /* Section Styling */
+    .section {
+      padding: 40px 0 14px;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .category-header.dairy {
+      border-inline-start: 6px solid var(--green-primary);
+    }
+
+    .category-header.bakery {
+      border-inline-start: 6px solid var(--amber-accent);
+    }
+
+    .category-header.water {
+      border-inline-start: 6px solid var(--blue-primary);
+    }
+
+    .cat-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cat-icon.dairy { background: var(--bg-soft-green); color: var(--green-primary); }
+    .cat-icon.bakery { background: var(--bg-soft-amber); color: var(--amber-accent); }
+    .cat-icon.water { background: var(--bg-soft-blue); color: var(--blue-primary); }
+
+    .category-header .en {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-dark);
+    }
+
+    .category-header .ur {
+      font-size: 1.3rem;
+      color: var(--green-dark);
+    }
+
+    .category-header.bakery .ur { color: #9c5b08; }
+    .category-header.water .ur { color: var(--blue-primary); }
+
+    /* Product Cards Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
+    }
+
+    .product-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .product-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .product-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: var(--bg-soft-green);
+      color: var(--green-primary);
+    }
+
+    .product-card.bakery-card .product-icon {
+      background: var(--bg-soft-amber);
+      color: var(--amber-accent);
+    }
+
+    .product-card.water-card .product-icon {
+      background: var(--bg-soft-blue);
+      color: var(--blue-primary);
+    }
+
+    .product-title .en {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .product-title .ur {
+      font-size: 1.18rem;
+      color: var(--green-dark);
+    }
+
+    .product-card.bakery-card .product-title .ur {
+      color: #8f5306;
+    }
+
+    .product-card.water-card .product-title .ur {
+      color: var(--blue-primary);
+    }
+
+    .price-box {
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: var(--bg-cream);
+      border: 1px solid #ece9de;
+    }
+
+    .price-box.fixed-price {
+      background: var(--bg-soft-green);
+      border-color: #cbe7d5;
+    }
+
+    .price-box .en {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--green-dark);
+    }
+
+    .price-box .ur {
+      font-size: 1.05rem;
+      color: var(--text-dark);
+    }
+
+    .price-box.inquiry-price .en {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--blue-primary);
+    }
+
+    .price-box.inquiry-price .ur {
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+
+    .btn-order-card {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: var(--green-primary);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.94rem;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .btn-order-card:hover {
+      background: var(--green-dark);
+    }
+
+    .btn-order-card .ur-ui {
+      font-size: 0.95rem;
+    }
+
+    /* Quick Order / Inquiry Form */
+    .form-section {
+      padding: 46px 0 20px;
+    }
+
+    .form-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-top: 5px solid var(--green-primary);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-md);
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .form-heading {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .form-heading .en {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--green-dark);
+    }
+
+    .form-heading .ur {
+      font-size: 1.4rem;
+      color: var(--text-dark);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text-dark);
+    }
+
+    .form-label .ur-ui {
+      color: var(--green-dark);
+      font-size: 0.98rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1.5px solid #d5ded6;
+      background: #fdfdfb;
+      font-family: var(--font-en);
+      font-size: 0.98rem;
+      color: var(--text-dark);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--green-primary);
+      box-shadow: 0 0 0 3px rgba(27, 122, 67, 0.14);
+      background: #ffffff;
+    }
+
+    .btn-submit-wa {
+      width: 100%;
+      padding: 14px 22px;
+      border: none;
+      border-radius: var(--radius-pill);
+      background: linear-gradient(135deg, #1b7a43, #179b52);
+      color: #ffffff;
+      font-family: var(--font-en);
+      font-size: 1.02rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: var(--shadow-lg);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-submit-wa:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(27, 122, 67, 0.25);
+    }
+
+    .form-error {
+      display: none;
+      margin-bottom: 14px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: #fdecec;
+      color: #a61d24;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Contact & Footer Section */
+    .footer-section {
+      margin-top: 42px;
+      background: linear-gradient(180deg, #eff7f1 0%, #e4f1f8 100%);
+      border-top: 1px solid var(--border-light);
+      padding: 42px 0 32px;
+    }
+
+    .footer-title {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .footer-title .en {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--green-dark);
+    }
+
+    .footer-title .ur {
+      font-size: 1.4rem;
+      color: var(--text-dark);
+    }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .contact-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+    }
+
+    .contact-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .contact-number {
+      font-size: 1.42rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      margin-bottom: 16px;
+    }
+
+    .contact-btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .btn-call-now,
+    .btn-wa-now {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 11px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-call-now {
+      background: var(--bg-soft-blue);
+      color: var(--blue-primary);
+      border: 1px solid #bde0f5;
+    }
+
+    .btn-call-now:hover {
+      background: #d5ecfa;
+    }
+
+    .btn-wa-now {
+      background: var(--green-primary);
+      color: #ffffff;
+    }
+
+    .btn-wa-now:hover {
+      background: var(--green-dark);
+    }
+
+    .rates-note {
+      background: var(--bg-white);
+      border: 1.5px dashed var(--blue-soft);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      text-align: center;
+      max-width: 880px;
+      margin: 0 auto 22px;
+    }
+
+    .rates-note .en {
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .rates-note .ur {
+      font-size: 1.08rem;
+      color: var(--blue-primary);
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    /* Floating WhatsApp Button (Always bottom-right corner) */
+    .floating-wa {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 999;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25d366;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 13px 18px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 8px 24px rgba(23, 155, 82, 0.42);
+      font-weight: 800;
+      font-size: 0.95rem;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .floating-wa:hover {
+      transform: scale(1.05);
+      background: #1fb857;
+    }
+
+    @media (max-width: 600px) {
+      .hero-card {
+        padding: 24px 16px;
+      }
+
+      .topbar-inner {
+        justify-content: space-between;
+      }
+
+      .btn-wa-sm .hide-xs {
+        display: none;
+      }
+
+      .floating-wa span {
+        display: none;
+      }
+
+      .floating-wa {
+        padding: 15px;
+        border-radius: 50%;
+      }
+
+      .contact-btn-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#top" class="brand-mini">
+        <div class="brand-badge" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1b7a43" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 2h8l1 4v14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V6l1-4z"/>
+            <path d="M7 10h10"/>
+            <path d="M9 2v4"/>
+          </svg>
+        </div>
+        <div class="brand-mini-text">
+          <span class="en">Mushtaq Mayo Milk Shop</span>
+          <span class="ur-ui">مشتاق میو ملک شاپ</span>
+        </div>
+      </a>
+
+      <div class="topbar-actions">
+        <button type="button" id="langToggle" class="lang-toggle-btn" aria-label="Toggle Language Urdu or English">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span class="ur-ui">اردو</span> / <span>English</span>
+        </button>
+
+        <a href="https://wa.me/923412881746?text=Assalam-o-Alaikum%20Mushtaq%20Mayo%20Milk%20Shop%2C%20I%20want%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer" class="btn-wa-sm">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.813 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.188.109-1.922-.125-.453-.141-1.047-.344-1.781-.656-3.125-1.344-5.156-4.5-5.313-4.703-.156-.203-1.266-1.688-1.266-3.219 0-1.531.797-2.281 1.078-2.594.281-.313.625-.391.828-.391.203 0 .422.016.609.016.188 0 .453-.078.703.531.266.625.891 2.172.969 2.328.078.156.125.344.031.547-.094.203-.156.328-.313.5-.156.172-.328.391-.469.531-.156.156-.313.328-.141.625.172.297.781 1.281 1.672 2.078 1.156 1.031 2.125 1.359 2.422 1.516.297.156.469.125.641-.078.172-.203.75-.875.953-1.172.203-.297.406-.25.672-.156.266.094 1.719.813 2.016.953.297.156.484.219.563.344.078.125.078.734-.172 1.438z"/>
+          </svg>
+          <span class="hide-xs">Order on WhatsApp</span>
+          <span class="ur-ui">واٹس ایپ آرڈر</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="top" class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <div class="hero-pill-row">
+          <span class="trust-pill dairy">🥛 100% Pure Dairy | <span class="ur-ui">خالص دودھ دہی</span></span>
+          <span class="trust-pill bakery">🥐 Fresh Bakery | <span class="ur-ui">تازہ بیکری</span></span>
+          <span class="trust-pill water">💧 Clean Filtered Water | <span class="ur-ui">صاف فلٹر پانی</span></span>
+        </div>
+
+        <h1 class="hero-title bilingual-stack">
+          <span class="en">Mushtaq Mayo Milk Shop</span>
+          <span class="ur">مشتاق میو ملک شاپ</span>
+        </h1>
+
+        <p class="hero-tagline bilingual-stack">
+          <span class="en">100% Pure Dairy, Fresh Bakery &amp; Clean Filtered Water Supply</span>
+          <span class="ur">خالص دودھ دہی، تازہ بیکری اور صاف فلٹر پانی کی سپلائی</span>
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="https://wa.me/923412881746?text=Assalam-o-Alaikum%20Mushtaq%20Mayo%20Milk%20Shop%2C%20I%20want%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer" class="btn-primary-wa">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.813 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.188.109-1.922-.125-.453-.141-1.047-.344-1.781-.656-3.125-1.344-5.156-4.5-5.313-4.703-.156-.203-1.266-1.688-1.266-3.219 0-1.531.797-2.281 1.078-2.594.281-.313.625-.391.828-.391.203 0 .422.016.609.016.188 0 .453-.078.703.531.266.625.891 2.172.969 2.328.078.156.125.344.031.547-.094.203-.156.328-.313.5-.156.172-.328.391-.469.531-.156.156-.313.328-.141.625.172.297.781 1.281 1.672 2.078 1.156 1.031 2.125 1.359 2.422 1.516.297.156.469.125.641-.078.172-.203.75-.875.953-1.172.203-.297.406-.25.672-.156.266.094 1.719.813 2.016.953.297.156.484.219.563.344.078.125.078.734-.172 1.438z"/>
+            </svg>
+            <span>Order on WhatsApp | <span class="ur-ui">واٹس ایپ پر آرڈر کریں</span></span>
+          </a>
+
+          <a href="#quick-order" class="btn-secondary-call">
+            <span>Quick Order Form | <span class="ur-ui">فوری آرڈر فارم</span></span>
+          </a>
+        </div>
+
+        <nav class="quick-nav" aria-label="Product Categories">
+          <a href="#dairy">🥛 Dairy | <span class="ur-ui">ڈیری مصنوعات</span></a>
+          <a href="#bakery">🥐 Bakery | <span class="ur-ui">بیکری آئٹمز</span></a>
+          <a href="#water">💧 Water Supply | <span class="ur-ui">فلٹر پانی</span></a>
+          <a href="#contact">📞 Contact | <span class="ur-ui">رابطہ</span></a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <!-- Category 1: Fresh Dairy Products -->
+    <section id="dairy" class="section">
+      <div class="category-header dairy">
+        <div class="cat-icon dairy" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 2h8l1 4v14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V6l1-4z"/>
+            <path d="M7 11h10"/>
+          </svg>
+        </div>
+        <h2 class="bilingual-stack">
+          <span class="en">Fresh Dairy Products</span>
+          <span class="ur">خالص ڈیری مصنوعات</span>
+        </h2>
+      </div>
+
+      <div class="products-grid">
+        <!-- 1. Pure Buffalo Milk -->
+        <article class="product-card">
+          <div class="product-top">
+            <div class="product-icon" aria-hidden="true">🥛</div>
+            <div class="product-title bilingual-stack">
+              <h3 class="en">Pure Buffalo Milk</h3>
+              <span class="ur">خالص بھینس کا دودھ</span>
+            </div>
+          </div>
+          <div class="price-box fixed-price bilingual-stack">
+            <span class="en">Rs. 250 / kg</span>
+            <span class="ur">250 روپے فی کلو</span>
+          </div>
+          <a href="https://wa.me/923412881746?text=Assalam-o-Alaikum%20Mushtaq%20Mayo%20Milk%20Shop%2C%20I%20want%20to%20order%20Pure%20Buffalo%20Milk%20(%D8%AE%D8%A7%D9%84%D8%B5%20%D8%A8%DA%BE%DB%8C%D9%86%D8%B3%20%DA%A9%D8%A7%20%D8%AF%D9%88%D8%AF%DA%BE)." target="_blank" rel="noopener noreferrer" class="btn-order-card">
+            <span>Order on WhatsApp | <span class="ur-ui">واٹس ایپ آرڈر</span></span>
+          </a>
+        </article>
+
+        <!-- 2. Pure Cow Milk -->
+        <article class="product-card">
+          <div class="product-top">
+            <div class="product-icon" aria-hidden="true">🐄</div>
+            <div class="product-title bilingual-stack">
+              <h3 class="en">Pure Cow Milk</h3>
+              <span class="ur">خالص گائے کا دودھ</span>
+            </div>
+          </div>
+          <div class="price-box fixed-price bilingual-stack">
+            <span class="en">Rs. 250 / kg</span>
+            <span class="ur">250 روپے فی کلو</span>
+          </div>
+          <a href="https://wa.me/923412881746?text=Assalam-o-Alaikum%20Mushtaq%20Mayo%20Milk%20Shop%2C%20I%20want%20to%20order%20Pure%20Cow%20Milk%20(%D8%AE%D8%A7%D9%84%D8%B5%20%DA%AF%D8%A7%D8%A6%DB%92%20%DA%A9%D8%A7%20%D8%AF%D9%88%D8%AF%DA%BE)." target="_blank" rel="noopener noreferrer" class="btn-order-card">
+            <span>Order on WhatsApp | <span class="ur-ui">واٹس ایپ آرڈر</span></span>
+          </a>
+        </article>
+
+        <!-- 3. Fresh Yogurt -->
+        <article class="product-card">
+          <div class="product-top">
+            <div class="product-icon" aria-hidden="true">🥣</div>
+            <div class="product-title bilingual-stack">
+              <h3 class="en">Fresh Yogurt</h3>
+              <span class="ur">تازہ دہی</span>
+            </div>
+          </div>
+          <div class="price-box fixed-price bilingual-stack">
+            <span class="en">Rs. 280 / kg</span>
+            <span class="ur">280 روپے فی کلو</span>
+          </div>
+          <a href="https://wa.me/923412881746?text=Assalam-o-Alaikum%20Mushtaq%20Mayo%20Milk%20Shop%2C%20I%20want%20to%20order%20Fresh%20Yogurt%20(%D8%AA%D8%A7%D8%B2%DB%81%20%D8%AF%DB%81%DB%8C)." target="_blank" rel="noopener noreferrer" class="btn-order-card">
+            <span>Order on WhatsApp | <span class="ur-ui">واٹس ایپ آرڈر</span></span>
+          </a>
+        </article>
+
+        <!-- 4. Traditional Lassi -->
+        <article class="product-card">
+          <div class="product-top">
+            <div class="product-icon" aria-hidden="true">🥤</div>
+            <div class="product-title bilingual-stack">
+              <h3 class="en">Traditional Lassi</h3>
+              <span class="ur">خالص لسی</span>
+            </div>
+          </div>
+          <div class="price-box inquiry-price bilingual-stack">
+            <span class="en">Call/WhatsApp for price</span>
+            <span class="ur">ریٹ کے لیے کال یا واٹس ایپ کریں</span>
+          </div>
+          <a href="https://wa.me/923412881746?text=Assalam-o-Alaikum%20Mushtaq%20Mayo%20Milk%20Shop%2C%20I%20want%20to%20order%20Traditional%20Lassi%20(%D8%AE%D8%A7%D9%84%D8%B5%20%D9%84%D8%B3%DB%8C)." target="_blank" rel="noopener noreferrer" class="btn-order-card">
+            <span>Order on WhatsApp | <span class="ur-ui">واٹس ایپ آرڈر</span></span>
+          </a>
+        </article>
+
+        <!-- 5. Pure Butter -->
+        <article class="product-card">
+          <div class="product-top">
+            <div class="product-icon" aria-hidden="true">🧈</div>
+            <div class="product-title bilingual-stack">
+              <h3 class="en">Pure Butter</h3>
+              <span class="ur">خالص مکھن</span>
+            </div>
+          </div>
+          <div class="price-box inquiry-price bilingual-stack">
+            <span class="en">Call/WhatsApp for price</span>
+            <span class="ur">ریٹ کے لیے کال یا واٹس ایپ کریں</span>
+          </div>
+          <a href="https://wa.me/923412881746?text=Assalam-o-Alaikum%20Mushtaq%20Mayo%20Milk%20Shop%2C%20I%20want%20to%20order%20Pure%20Butter%20(%D8%AE%D8%A7%D9%84%D8%B5%20%D9%85%DA%A9%DA%BE%D9%86)." target="_blank" rel="noopener noreferrer" class="btn-order-card">
+            <span>Order on WhatsApp | <span class="ur-ui">واٹس ایپ آرڈر</span></span>
+          </a>
+        </article>
+
+        <!-- 6. Desi Ghee -->
+        <article class="product-card">
+          <div class="product-top">
+            <div class="product-icon" aria-hidden="true">🍯</div>
+            <div class="product-title bilingual-stack">
+              <h3 class="en">Desi Ghee</h3>
+              <span class="ur">خالص دیسی گھی</span>
+            </div>
+          </div>
+          <div class="price-box inquiry-price bilingual-stack">
+            <span class="en">Call/WhatsApp for price</span>
+            <span class="ur">ریٹ کے لیے کال یا واٹس ایپ کریں</span>
+          </div>
+          <a href="https://wa.me/923412881746?text=Assalam-o-Alaikum%20Mushtaq%20Mayo%20Milk%20Shop%2C%20I%20want%20to%20order%20Desi%20Ghee%20(%D8%AE%D8%A7%D9%84%D8%B5%20%D8%AF%DB%8C%D8%B3%DB%8C%20%DA%AF%DA%BE%DB%8C)." target="_blank" rel="noopener noreferrer" class="btn-order-card">
+            <span>Order on WhatsApp | <span class="ur-ui">واٹس ایپ آرڈر</span></span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Category 2: Bakery Items -->
+    <section id="bakery" class="section">
+      <div class="category-header bakery">
+        <div class="cat-icon bakery" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/>
+            <path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/>
+            <path d="M2 21h20"/>
+            <path d="M7 8v3"/>
+            <path d="M12 8v3"/>
+            <path d="M17 8v3"/>
+          </svg>
+        </div>
+        <h2 class="bilingual-stack">
+          <span class="en">Bakery Items</span>
+          <span class="ur">بیکری آئٹمز</span>
+        </h2>
+      </div>
+
+      <div class="products-grid">
+        <!-- 1. Egg Cake Rusk -->
+        <article class="product-card bakery-card">
+          <div class="product-top">
+            <div class="product-icon" aria-hidden="true">🍞</div>
+            <div class="product-title bilingual-stack">
+              <h3 class="en">Egg Cake Rusk</h3>
+              <span class="ur">انڈا کیک رس</span>
+            </div>
+          </div>
+          <div class="price-box inquiry-price bilingual-stack">
+            <span class="en">Call/WhatsApp for price</span>
+            <span class="ur">ریٹ کے لیے کال یا واٹس ایپ کریں</span>
+          </div>
+          <a href="https://wa.me/923412881746?text=Assalam-o-Alaikum%20Mushtaq%20Mayo%20Milk%20Shop%2C%20I%20want%20to%20order%20Egg%20Cake%20Rusk%20(%D8%A7%D9%86%DA%88%D8%A7%20%DA%A9%DB%8C%DA%A9%20%D8%B1%D8%B3)." target="_blank" rel="noopener noreferrer" class="btn-order-card">
+            <span>Order on WhatsApp | <span class="ur-ui">واٹس ایپ آرڈر</span></span>
+          </a>
+        </article>
+
+        <!-- 2. Fruit Cake & Bakery Snacks -->
+        <article class="product-card bakery-card">
+          <div class="product-top">
+            <div class="product-icon" aria-hidden="true">🍰</div>
+            <div class="product-title bilingual-stack">
+              <h3 class="en">Fruit Cake &amp; Bakery Snacks</h3>
+              <span class="ur">فروٹ کیک اور دیگر بیکری آئٹمز</span>
+            </div>
+          </div>
+          <div class="price-box inquiry-price bilingual-stack">
+            <span class="en">Call/WhatsApp for price</span>
+            <span class="ur">ریٹ کے لیے کال یا واٹس ایپ کریں</span>
+          </div>
+          <a href="https://wa.me/923412881746?text=Assalam-o-Alaikum%20Mushtaq%20Mayo%20Milk%20Shop%2C%20I%20want%20to%20order%20Fruit%20Cake%20%26%20Bakery%20Snacks%20(%D9%81%D8%B1%D9%88%D9%B9%20%DA%A9%DB%8C%DA%A9%20%D8%A7%D9%88%D8%B1%20%D8%AF%DB%8C%DA%AF%D8%B1%20%D8%A8%DB%8C%DA%A9%D8%B1%DB%8C%20%D8%A2%D8%A6%D9%B9%D9%85%D8%B2)." target="_blank" rel="noopener noreferrer" class="btn-order-card">
+            <span>Order on WhatsApp | <span class="ur-ui">واٹس ایپ آرڈر</span></span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Category 3: Filtered Water Supply -->
+    <section id="water" class="section">
+      <div class="category-header water">
+        <div class="cat-icon water" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+          </svg>
+        </div>
+        <h2 class="bilingual-stack">
+          <span class="en">Filtered Water Supply</span>
+          <span class="ur">صاف فلٹر پانی سپلائی</span>
+        </h2>
+      </div>
+
+      <div class="products-grid">
+        <article class="product-card water-card">
+          <div class="product-top">
+            <div class="product-icon" aria-hidden="true">💧</div>
+            <div class="product-title bilingual-stack">
+              <h3 class="en">Clean Filtered Drinking Water</h3>
+              <span class="ur">صاف پینے کا فلٹر پانی - گھر اور دکان کے لیے سپلائی</span>
+            </div>
+          </div>
+          <div class="price-box inquiry-price bilingual-stack">
+            <span class="en">Call/WhatsApp for price &amp; delivery</span>
+            <span class="ur">ریٹ اور سپلائی کے لیے رابطہ کریں</span>
+          </div>
+          <a href="https://wa.me/923412881746?text=Assalam-o-Alaikum%20Mushtaq%20Mayo%20Milk%20Shop%2C%20I%20want%20to%20order%20Clean%20Filtered%20Drinking%20Water%20(%D8%B5%D8%A7%D9%81%20%D9%BE%DB%8C%D9%86%DB%92%20%DA%A9%D8%A7%20%D9%81%D9%84%D9%B9%D8%B1%20%D9%BE%D8%A7%D9%86%DB%8C)." target="_blank" rel="noopener noreferrer" class="btn-order-card">
+            <span>Order on WhatsApp | <span class="ur-ui">واٹس ایپ آرڈر</span></span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Quick Order / Price Inquiry Form -->
+    <section id="quick-order" class="form-section">
+      <div class="form-card">
+        <div class="form-heading bilingual-stack">
+          <h2 class="en">Quick Order / Price Inquiry Form</h2>
+          <span class="ur">فوری آرڈر یا ریٹ معلوم کریں</span>
+        </div>
+
+        <div id="formError" class="form-error">
+          Please fill in your name and item details. / براہ کرم اپنا نام اور سامان کی تفصیل درج کریں۔
+        </div>
+
+        <form id="quickOrderForm" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="customerName" class="form-label">
+                <span>Customer Name</span>
+                <span class="ur-ui">نام</span>
+              </label>
+              <input type="text" id="customerName" class="form-control" placeholder="e.g. Ali Ahmed / علی احمد" required />
+            </div>
+
+            <div class="form-group">
+              <label for="customerAddress" class="form-label">
+                <span>Address / Area</span>
+                <span class="ur-ui">پتہ / علاقہ</span>
+              </label>
+              <input type="text" id="customerAddress" class="form-control" placeholder="e.g. Street 4, Mohalla..." required />
+            </div>
+
+            <div class="form-group full-width">
+              <label for="orderItems" class="form-label">
+                <span>Item &amp; Quantity</span>
+                <span class="ur-ui">سامان اور مقدار</span>
+              </label>
+              <input type="text" id="orderItems" class="form-control" placeholder="e.g. 2 kg Buffalo Milk, 1 kg Yogurt, 1 Water Bottle / 2 کلو دودھ، 1 کلو دہی" required />
+            </div>
+
+            <div class="form-group full-width">
+              <label for="waNumberSelect" class="form-label">
+                <span>Choose WhatsApp Number</span>
+                <span class="ur-ui">واٹس ایپ نمبر منتخب کریں</span>
+              </label>
+              <select id="waNumberSelect" class="form-control" dir="ltr">
+                <option value="923412881746">+92 341 2881746</option>
+                <option value="923275377380">+92 327 5377380</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit-wa">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.813 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.188.109-1.922-.125-.453-.141-1.047-.344-1.781-.656-3.125-1.344-5.156-4.5-5.313-4.703-.156-.203-1.266-1.688-1.266-3.219 0-1.531.797-2.281 1.078-2.594.281-.313.625-.391.828-.391.203 0 .422.016.609.016.188 0 .453-.078.703.531.266.625.891 2.172.969 2.328.078.156.125.344.031.547-.094.203-.156.328-.313.5-.156.172-.328.391-.469.531-.156.156-.313.328-.141.625.172.297.781 1.281 1.672 2.078 1.156 1.031 2.125 1.359 2.422 1.516.297.156.469.125.641-.078.172-.203.75-.875.953-1.172.203-.297.406-.25.672-.156.266.094 1.719.813 2.016.953.297.156.484.219.563.344.078.125.078.734-.172 1.438z"/>
+            </svg>
+            <span>Send Order on WhatsApp | <span class="ur-ui">واٹس ایپ پر آرڈر بھیجیں</span></span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Contact & Footer Section -->
+  <footer id="contact" class="footer-section">
+    <div class="container">
+      <div class="footer-title bilingual-stack">
+        <h2 class="en">Contact &amp; Orders</h2>
+        <span class="ur">رابطہ اور آرڈر نمبرز</span>
+      </div>
+
+      <div class="contact-cards">
+        <!-- Number 1 -->
+        <div class="contact-card">
+          <div class="contact-label">Number 1 (Call &amp; WhatsApp | <span class="ur-ui">کال اور واٹس ایپ</span>)</div>
+          <div class="contact-number">
+            <span class="ltr-num" dir="ltr">+92 341 2881746</span>
+          </div>
+          <div class="contact-btn-row">
+            <a href="tel:+923412881746" class="btn-call-now">
+              <span>📞 Call | <span class="ur-ui">کال کریں</span></span>
+            </a>
+            <a href="https://wa.me/923412881746?text=Assalam-o-Alaikum%20Mushtaq%20Mayo%20Milk%20Shop" target="_blank" rel="noopener noreferrer" class="btn-wa-now">
+              <span>💬 WhatsApp | <span class="ur-ui">واٹس ایپ</span></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Number 2 -->
+        <div class="contact-card">
+          <div class="contact-label">Number 2 (Call &amp; WhatsApp | <span class="ur-ui">کال اور واٹس ایپ</span>)</div>
+          <div class="contact-number">
+            <span class="ltr-num" dir="ltr">+92 327 5377380</span>
+          </div>
+          <div class="contact-btn-row">
+            <a href="tel:+923275377380" class="btn-call-now">
+              <span>📞 Call | <span class="ur-ui">کال کریں</span></span>
+            </a>
+            <a href="https://wa.me/923275377380?text=Assalam-o-Alaikum%20Mushtaq%20Mayo%20Milk%20Shop" target="_blank" rel="noopener noreferrer" class="btn-wa-now">
+              <span>💬 WhatsApp | <span class="ur-ui">واٹس ایپ</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="rates-note bilingual-stack">
+        <p class="en">For daily rates of Makhan, Desi Ghee, Bakery items, and Water Supply, please call or WhatsApp us anytime on either number.</p>
+        <p class="ur">مکھن، دیسی گھی، بیکری آئٹمز اور فلٹر پانی کے روزانہ کے ریٹ جاننے کے لیے کسی بھی وقت دونوں نمبروں پر کال یا واٹس ایپ کریں۔</p>
+      </div>
+
+      <p class="copyright">
+        © <span id="year"></span> Mushtaq Mayo Milk Shop | <span class="ur-ui">مشتاق میو ملک شاپ</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button (Bottom Right Corner) -->
+  <a href="https://wa.me/923412881746?text=Assalam-o-Alaikum%20Mushtaq%20Mayo%20Milk%20Shop%2C%20I%20want%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer" class="floating-wa" aria-label="Order on WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.813 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.188.109-1.922-.125-.453-.141-1.047-.344-1.781-.656-3.125-1.344-5.156-4.5-5.313-4.703-.156-.203-1.266-1.688-1.266-3.219 0-1.531.797-2.281 1.078-2.594.281-.313.625-.391.828-.391.203 0 .422.016.609.016.188 0 .453-.078.703.531.266.625.891 2.172.969 2.328.078.156.125.344.031.547-.094.203-.156.328-.313.5-.156.172-.328.391-.469.531-.156.156-.313.328-.141.625.172.297.781 1.281 1.672 2.078 1.156 1.031 2.125 1.359 2.422 1.516.297.156.469.125.641-.078.172-.203.75-.875.953-1.172.203-.297.406-.25.672-.156.266.094 1.719.813 2.016.953.297.156.484.219.563.344.078.125.078.734-.172 1.438z"/>
+    </svg>
+    <span>WhatsApp Order | <strong class="ur-ui">آرڈر کریں</strong></span>
+  </a>
+
+  <script>
+    // Dynamic Copyright Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Language / Direction Toggle (English LTR <-> Urdu RTL while keeping clear bilingual labels)
+    const langToggleBtn = document.getElementById('langToggle');
+    const htmlEl = document.documentElement;
+
+    langToggleBtn.addEventListener('click', () => {
+      const isCurrentlyLTR = htmlEl.getAttribute('dir') === 'ltr';
+      if (isCurrentlyLTR) {
+        htmlEl.setAttribute('dir', 'rtl');
+        htmlEl.setAttribute('lang', 'ur');
+      } else {
+        htmlEl.setAttribute('dir', 'ltr');
+        htmlEl.setAttribute('lang', 'en');
+      }
+    });
+
+    // Quick Order / Inquiry Form -> WhatsApp Redirect
+    const quickOrderForm = document.getElementById('quickOrderForm');
+    const formError = document.getElementById('formError');
+
+    quickOrderForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('customerName').value.trim();
+      const address = document.getElementById('customerAddress').value.trim();
+      const items = document.getElementById('orderItems').value.trim();
+      const selectedWa = document.getElementById('waNumberSelect').value;
+
+      if (!name || !items) {
+        formError.style.display = 'block';
+        return;
+      }
+
+      formError.style.display = 'none';
+
+      const messageLines = [
+        'Assalam-o-Alaikum Mushtaq Mayo Milk Shop,',
+        'I want to place an order / inquire about rates:',
+        '',
+        'Name (نام): ' + name,
+        'Address/Area (پتہ/علاقہ): ' + (address || 'Not provided'),
+        'Item & Quantity (سامان اور مقدار): ' + items
+      ];
+
+      const encodedMessage = encodeURIComponent(messageLines.join('\n'));
+      const waUrl = 'https://wa.me/' + selectedWa + '?text=' + encodedMessage;
+
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+    });
+  </script>
+</body>
+</html>
